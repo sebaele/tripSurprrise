@@ -31,6 +31,36 @@
       font-size: 3em;
       margin-top: 20px;
     }
+
+    /* Bottone indizio */
+    .hint-button {
+      margin-top: 15px;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(45deg, #ff512f, #dd2476);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .hint-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    }
+
+    .hint-section {
+      margin-top: 40px;
+    }
+
+    .hint-section h2 {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
@@ -38,9 +68,14 @@
   <div id="countdown"></div>
   <div class="emoji">🌍✈️🎁</div>
 
+  <!-- Sezione indizio -->
+  <div class="hint-section">
+    <h2>Indizio:</h2>
+    <a href="https://www.youtube.com/watch?v=scJzAkr_1ww" target="_blank" class="hint-button">Scopri l'indizio!</a>
+  </div>
+
   <script>
-    // Imposta la data del viaggio (9 febbraio 2026 alle 09:00)
-    const targetDate = new Date("2025-10-24T16:45:00");
+    const targetDate = new Date("2026-02-08T22:00:00");
 
     function updateCountdown() {
       const now = new Date();
