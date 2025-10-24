@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countdown al viaggio a sorpresa ✈️</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
+      font-family: 'Poppins', sans-serif;
+      color: #222;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    #countdown {
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    .emoji {
+      font-size: 3em;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Il tuo viaggio a sorpresa parte tra...</h1>
+  <div id="countdown"></div>
+  <div class="emoji">🌍✈️🎁</div>
+
+  <script>
+    // Imposta la data del viaggio (9 febbraio 2026 alle 09:00)
+    const targetDate = new Date("2026-02-09T09:00:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("countdown").textContent = "🎉 È il momento! Buon viaggio! ✈️";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("countdown").textContent =
+        `${days} giorni, ${hours} ore, ${minutes} min, ${seconds} sec`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
