@@ -11,67 +11,11 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      overflow: hidden;
+      background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
       font-family: 'Poppins', sans-serif;
       color: #222;
       text-align: center;
-      background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
-      position: relative;
-    }
-
-    /* Fenicotteri animati sullo sfondo */
-    .flamingo {
-      position: absolute;
-      width: 120px;
-      opacity: 0.8;
-      animation: float 40s linear infinite;
-    }
-
-    /* Movimento da sinistra a destra + ondeggio */
-    @keyframes float {
-      0% {
-        transform: translateX(-200px) translateY(0) rotate(0deg);
-      }
-      25% {
-        transform: translateX(25vw) translateY(-10px) rotate(2deg);
-      }
-      50% {
-        transform: translateX(50vw) translateY(5px) rotate(-2deg);
-      }
-      75% {
-        transform: translateX(75vw) translateY(-8px) rotate(1deg);
-      }
-      100% {
-        transform: translateX(100vw) translateY(0) rotate(0deg);
-      }
-    }
-
-    /* Variazioni per fenicotteri multipli */
-    .flamingo:nth-child(1) {
-      top: 15%;
-      animation-duration: 50s;
-      animation-delay: 0s;
-    }
-
-    .flamingo:nth-child(2) {
-      top: 40%;
-      width: 150px;
-      animation-duration: 60s;
-      animation-delay: 10s;
-    }
-
-    .flamingo:nth-child(3) {
-      top: 70%;
-      width: 100px;
-      animation-duration: 45s;
-      animation-delay: 20s;
-    }
-
-    h1, #countdown, .hint-section {
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 10px 20px;
-      border-radius: 10px;
-      z-index: 10;
+      padding: 20px;
     }
 
     h1 {
@@ -79,15 +23,26 @@
       margin-bottom: 20px;
     }
 
+    .info {
+      max-width: 600px;
+      text-align: left;
+      font-size: 1.1em;
+      line-height: 1.6em;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
     #countdown {
-      font-size: 2.5em;
+      font-size: 2em;
       font-weight: bold;
+      margin-top: 30px;
     }
 
     .emoji {
       font-size: 3em;
       margin-top: 20px;
-      z-index: 10;
     }
 
     /* Bottone indizio */
@@ -105,7 +60,6 @@
       transition: transform 0.2s, box-shadow 0.2s;
       text-decoration: none;
       display: inline-block;
-      z-index: 10;
     }
 
     .hint-button:hover {
@@ -114,7 +68,7 @@
     }
 
     .hint-section {
-      margin-top: 40px;
+      margin-top: 30px;
     }
 
     .hint-section h2 {
@@ -123,20 +77,30 @@
   </style>
 </head>
 <body>
-  <!-- Fenicotteri animati -->
-  <img src="https://cdn.pixabay.com/photo/2017/09/20/12/00/flamingo-2769265_1280.png" class="flamingo" alt="fenicottero rosa">
-  <img src="https://cdn.pixabay.com/photo/2017/09/20/12/00/flamingo-2769265_1280.png" class="flamingo" alt="fenicottero rosa">
-  <img src="https://cdn.pixabay.com/photo/2017/09/20/12/00/flamingo-2769265_1280.png" class="flamingo" alt="fenicottero rosa">
+  <h1>Pronta per partire?</h1>
 
-  <h1>Il tuo viaggio a sorpresa parte tra...</h1>
-  <div id="countdown"></div>
-  <div class="emoji">🌍✈️🎁</div>
+  <div class="info">
+    <p>Se sì, ti servirà:</p>
+    <ol>
+      <li><strong>Una settimana di ferie</strong> – dal <strong>9 al 15 febbraio</strong></li>
+      <li><strong>Per la valigia:</strong><br>
+        Non troppo pesante, ma neanche leggera,<br>
+        di giorno fa caldo, la sera si spera.<br>
+        Metti qualcosa che scaldi un pochino,<br>
+        e forse servirà anche un costume vicino.<br>
+        E non dimenticare, per il gran trasporto,<br>
+        l’amico fedele: <strong>il tuo passaporto</strong>.
+      </li>
+    </ol>
+  </div>
 
-  <!-- Sezione indizio -->
   <div class="hint-section">
-    <h2>Indizio:</h2>
+    <h2>Se proprio vuoi anche uno spoiler...</h2>
     <a href="https://www.youtube.com/watch?v=scJzAkr_1ww" target="_blank" class="hint-button">Scopri l'indizio!</a>
   </div>
+
+  <div id="countdown"></div>
+  <div class="emoji">🌍✈️🎁</div>
 
   <script>
     const targetDate = new Date("2026-02-09T08:00:00");
